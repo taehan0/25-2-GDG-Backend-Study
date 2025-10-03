@@ -34,17 +34,17 @@ public class ProductService {
         return product;
     }
 
-    public void updateProduct(Long id,ProductUpdateRequest request){
-        Product product=productRepository.findById(id);
+    public void updateProduct(Long id, ProductUpdateRequest request) {
+        Product product = productRepository.findById(id);
         if (product == null) {
             throw new RuntimeException("Product not found");
         }
         product.updateInfo(request.getProductName());
     }
 
-    public void deleteProduct(Long id){
-        Product product=productRepository.findById(id);
-        if( product == null ) {
+    public void deleteProduct(Long id) {
+        Product product = productRepository.findById(id);
+        if (product == null) {
             throw new RuntimeException("Product not found");
         }
         productRepository.deleteById(id);
